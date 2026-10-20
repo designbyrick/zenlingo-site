@@ -1,0 +1,382 @@
+/* Design I tokens from docs/DESIGN_SYSTEM.md (owner-approved 2026-10-19). Do not change values without owner approval. */
+:root {
+  --beige: #F1ECE1;
+  --white: #FFFFFF;
+  --ink: #1A1A1A;
+  --purple: #9A7BE2;
+  --to-do: #DDD5C6;
+  --red: #B42318;
+  /* Secondary text: ink at reduced opacity, still above 4.5:1 on beige and white. */
+  --ink-secondary: rgba(26, 26, 26, 0.8);
+  --radius-control: 12px;
+  --radius-card: 16px;
+  --gutter: 16px;
+  --max-width: 960px;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--beige);
+  color: var(--ink);
+  font-family: 'Instrument Sans', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Uppercase only for short section titles (up to three words). */
+.label {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+a {
+  color: var(--ink);
+  text-decoration-color: var(--purple);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  background: var(--purple);
+  color: var(--ink);
+  padding: 12px 16px;
+  border-radius: var(--radius-control);
+  font-weight: 600;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section {
+  padding: 48px 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--to-do);
+}
+
+/* Header and footer */
+.site-header {
+  padding: 16px 0;
+}
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  background: var(--purple);
+  color: var(--ink);
+  border-radius: 999px;
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--purple);
+}
+
+.site-footer {
+  border-top: 1px solid var(--to-do);
+  padding: 32px 0 48px;
+  font-size: 0.9375rem;
+}
+
+.site-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.site-footer p {
+  color: var(--ink-secondary);
+  margin: 0;
+}
+
+/* Controls */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 0;
+  font: 600 1.0625rem/1 'Instrument Sans', system-ui, sans-serif;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.button-primary {
+  background: var(--purple);
+}
+
+.button-secondary {
+  background: var(--white);
+  border: 2px solid var(--ink);
+}
+
+.button[aria-disabled='true'] {
+  background: var(--to-do);
+  color: var(--ink);
+  cursor: default;
+}
+
+/* Cards */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  border: 1px solid var(--to-do);
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--purple);
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.pending {
+  border: 2px dashed var(--ink);
+  border-radius: var(--radius-control);
+  padding: 12px 16px;
+  background: var(--white);
+  font-weight: 600;
+}
+
+.notice {
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-card);
+  padding: 16px 20px;
+  background: var(--white);
+}
+
+.muted {
+  color: var(--ink-secondary);
+}
+
+/* Hero */
+.hero {
+  padding: 48px 0 40px;
+}
+
+.hero .lead {
+  font-size: 1.1875rem;
+  max-width: 40em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 0;
+}
+
+/* FAQ uses native details, so it works without JavaScript. */
+.faq details {
+  background: var(--white);
+  border: 1px solid var(--to-do);
+  border-radius: var(--radius-control);
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.faq details p {
+  margin: 8px 0 0;
+}
+
+/* Legal and support pages */
+.prose h2 {
+  font-size: 1.75rem;
+  margin-top: 40px;
+}
+
+.prose h2:first-of-type {
+  margin-top: 24px;
+}
+
+.prose ul {
+  padding-left: 1.25em;
+  margin: 0 0 16px;
+}
+
+.prose li {
+  margin-bottom: 8px;
+}
+
+.page-title {
+  padding: 40px 0 16px;
+}
+
+.price {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1;
+  margin: 8px 0;
+}
+
+.check {
+  list-style: none;
+  padding: 0;
+}
+
+.check li {
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.check li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--purple);
+  border: 1px solid var(--ink);
+}
+
+@media (max-width: 374px) {
+  :root {
+    --gutter: 12px;
+  }
+}

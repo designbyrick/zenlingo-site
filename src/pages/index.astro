@@ -1,0 +1,202 @@
+---
+import Base from '../layouts/Base.astro';
+import { siteUrl, siteName, appStoreUrl } from '../../site.config.mjs';
+
+const title = 'Learn English from the places around you | Zenlingo';
+const description =
+  'Take a photo of a café, supermarket or office. Zenlingo turns the scene into a short English lesson: three useful words, two expressions and ten practice questions.';
+
+const faq = [
+  {
+    question: 'Is this a placement test?',
+    answer:
+      'No. You choose Beginner, Intermediate or Advanced to match how your English feels today. The level is a self-selected label, not a test result, and you can change it in Account. Lessons you already have keep their original level.',
+  },
+  {
+    question: 'Do I need an account?',
+    answer:
+      'Yes. Full lessons require Sign in with Apple. Signing in with the same Apple account lets you recover your synchronized lessons after you reinstall the app or change iPhone.',
+  },
+  {
+    question: 'What happens to my photos?',
+    answer:
+      'Your photo is sent to OpenAI to create the lesson. Zenlingo stores a reduced copy of the photo with your collection, and does not keep original-resolution photos. Your originals stay in your photo library. See the Privacy Policy for details.',
+  },
+  {
+    question: 'Does Zenlingo record or score my voice?',
+    answer:
+      'No. Zenlingo does not record your voice, use speech recognition or score your pronunciation. Audio only plays the English word or expression.',
+  },
+  {
+    question: 'Are the lessons always correct?',
+    answer:
+      'No. AI can make mistakes, including incorrect information or answers. Check anything important with a teacher or a dictionary.',
+  },
+  {
+    question: 'How do I cancel my subscription?',
+    answer:
+      'Cancel in your Apple subscription settings on your iPhone. Cancelling stops renewal but does not end access before the current period finishes. Deleting your account in the app does not cancel an Apple subscription, so cancel it separately.',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: siteName,
+    description,
+    url: siteUrl,
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'iOS',
+    inLanguage: 'en',
+    isAccessibleForFree: false,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
+];
+---
+<Base title={title} description={description} path="/" jsonLd={jsonLd}>
+  <section class="hero">
+    <div class="wrap">
+      <p class="label">Learn English from your photos</p>
+      <h1>Learn English from the places around you</h1>
+      <p class="lead">
+        Take a photo of a café, a supermarket or an office. Zenlingo turns the scene into a short
+        lesson: three useful words, two everyday expressions and ten practice questions.
+      </p>
+      <div class="actions">
+        {
+          appStoreUrl ? (
+            <a class="button button-primary" href={appStoreUrl}>Download on the App Store</a>
+          ) : (
+            <span class="button" aria-disabled="true">Coming soon to the App Store</span>
+          )
+        }
+        <a class="button button-secondary" href="#how-it-works">See how it works</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Choose a photo</h3>
+          <p>
+            Take a photo or choose one from your library. The iOS photo picker only shares the
+            photos you select.
+          </p>
+        </article>
+        <article class="card">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Learn</h3>
+          <p>
+            Study three useful words and two expressions. Each one has a simple English meaning,
+            an example and audio you can play.
+          </p>
+        </article>
+        <article class="card">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Practice</h3>
+          <p>
+            Answer ten multiple-choice questions with four options each. See your result and
+            review the answers you missed.
+          </p>
+        </article>
+      </div>
+      <p class="muted" style="margin-top: 24px;">
+        Your lessons are saved to your collection. Sign in with Apple to keep them available on
+        your account.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="label">Choose your level</p>
+      <h2>Pick the level that sounds like you</h2>
+      <p>
+        Beginner, Intermediate and Advanced are self-selected labels. They are not a placement
+        test. Advanced lessons use more precise vocabulary in context.
+      </p>
+      <div class="grid grid-3" style="margin-top: 24px;">
+        <article class="card">
+          <h3>Beginner</h3>
+          <p class="muted">“I understand simple English”</p>
+        </article>
+        <article class="card">
+          <h3>Intermediate</h3>
+          <p class="muted">“I can handle everyday conversations”</p>
+        </article>
+        <article class="card">
+          <h3>Advanced</h3>
+          <p class="muted">“I want more precise, natural English”</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="plans">
+    <div class="wrap">
+      <p class="label">Trial and plans</p>
+      <h2>Try it, then choose a plan</h2>
+      <p>
+        Full lessons require an active trial or subscription. Both plans offer the same features
+        and usage limits.
+      </p>
+
+      <p style="margin-top: 16px;">
+        There is no free tier. The only free part is the optional onboarding sample: one bundled
+        photo, one word and one question, shown before you subscribe. It needs no account, camera
+        access or subscription.
+      </p>
+
+      <div class="grid grid-2" style="margin-top: 24px;">
+        <article class="card">
+          <h3>Monthly</h3>
+          <p class="price">US$7.99</p>
+          <p class="muted">per month, renews automatically</p>
+        </article>
+        <article class="card">
+          <h3>Annual</h3>
+          <p class="price">US$49.99</p>
+          <p class="muted">per year, renews automatically</p>
+        </article>
+      </div>
+
+      <ul class="check" style="margin-top: 24px;">
+        <li>Both plans include a 3-day free trial when you are eligible. Apple confirms eligibility.</li>
+        <li>The app shows the price, billing period and trial before you buy. Your local currency may differ from the US prices above.</li>
+        <li>Subscriptions renew automatically unless you cancel in your Apple subscription settings.</li>
+        <li>Personal-photo lessons have a usage limit of up to 10 lessons in any 24-hour window.</li>
+        <li>Restore purchases is available in the app.</li>
+        <li>If access ends, the app stays locked until you renew. Your cloud collection is kept for 90 days after access ends, so renewing in that time brings it back.</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="wrap">
+      <p class="label">Questions</p>
+      <h2>Frequently asked questions</h2>
+      {
+        faq.map((item) => (
+          <details>
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+</Base>

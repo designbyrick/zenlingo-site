@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import { contactEmail } from '../../site.config.mjs';
+---
+<Base
+  title="Support | Zenlingo"
+  description="Get help with Zenlingo: restore purchases, cancel a subscription, recover your collection or delete your account."
+  path="/support/"
+>
+  <section class="page-title">
+    <div class="wrap prose">
+      <h1>Support</h1>
+
+      <div class="notice">
+        <p class="label" style="margin: 0 0 4px;">How to contact us</p>
+        <p style="margin: 8px 0 0;">Email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. We reply as soon as we can.</p>
+      </div>
+
+      <h2>Common questions</h2>
+      <ul>
+        <li><strong>Restore purchases.</strong> In the app, open the subscription screen and choose Restore purchases.</li>
+        <li><strong>Cancel your subscription.</strong> On iPhone, open Settings, tap your name, then Subscriptions. Cancelling stops renewal but does not end access before the current period finishes.</li>
+        <li><strong>Lessons missing after reinstalling.</strong> Sign in with the same Apple account. Only synchronized lessons and reduced photos can be recovered. Results from the last full lesson are stored only on the iPhone that completed them.</li>
+        <li><strong>Delete your account.</strong> In the app, open Account and choose Delete account. Deletion is permanent. Cancel any Apple subscription separately.</li>
+        <li><strong>Photo processing failed.</strong> Check your connection and try again, or choose another photo. Failed attempts do not use your usage limit.</li>
+      </ul>
+
+      <p>
+        Read the <a href="/privacy/">Privacy Policy</a> and <a href="/terms/">Terms of Use</a>.
+        Drafts are pending legal review.
+      </p>
+    </div>
+  </section>
+</Base>

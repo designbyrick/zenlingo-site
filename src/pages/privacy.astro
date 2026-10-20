@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import { contactEmail, placeholders } from '../../site.config.mjs';
+---
+<Base
+  title="Privacy Policy | Zenlingo"
+  description="How Zenlingo handles your account, photos, lessons and purchases. Draft, pending legal review."
+  path="/privacy/"
+>
+  <section class="page-title">
+    <div class="wrap prose">
+      <h1>Privacy Policy</h1>
+      <p class="pending">Draft, pending legal review. This page is not final and must not be published as the final policy until reviewed.</p>
+
+      <h2>Who we are</h2>
+      <p>Zenlingo is operated by {placeholders.legalEntity}</p>
+
+      <h2>What we collect</h2>
+      <ul>
+        <li><strong>Account.</strong> The identifier and details that Sign in with Apple provides, managed through our authentication service (Supabase Auth).</li>
+        <li><strong>Photos.</strong> The photo you choose is sent to OpenAI to create a lesson. We store a reduced copy of the photo in Supabase with your collection. We do not keep original-resolution photos. Your originals stay in your photo library.</li>
+        <li><strong>Lessons and practice.</strong> The lessons, expressions, questions and answers that the app saves. Your latest completed full-lesson result is stored only on your iPhone.</li>
+        <li><strong>Settings.</strong> Your chosen English level.</li>
+        <li><strong>Purchases.</strong> Subscription status, handled through Apple and RevenueCat. We do not receive your payment card details.</li>
+        <li><strong>Audio.</strong> Pronunciation audio for each word and expression. [Audio provider: pending owner decision.]</li>
+        <li><strong>Analytics and advertising.</strong> None are set up in this draft. [Pending owner confirmation.]</li>
+      </ul>
+      <p>Zenlingo does not record your voice, use speech recognition or score pronunciation.</p>
+
+      <h2>How we use this information</h2>
+      <p>To create lessons from your photos, save and sync your collection, check your access, show your results, and respond to support requests.</p>
+
+      <h2>Service providers</h2>
+      <ul>
+        <li>Apple (Sign in with Apple, App Store purchases)</li>
+        <li>OpenAI (photo processing to create lessons)</li>
+        <li>Supabase (authentication, storage of your collection and reduced photos)</li>
+        <li>RevenueCat (purchase status)</li>
+        <li>[Audio provider: pending owner decision]</li>
+      </ul>
+
+      <h2>How long we keep data</h2>
+      <ul>
+        <li>While your account is active, your collection stays in the cloud.</li>
+        <li>After your access ends, we keep your cloud collection for 90 days. Renewing within that time restores access to it. After 90 days we delete it.</li>
+        <li>If you delete your account, we block it immediately and delete your account and learning data from active systems within seven days. There is no recovery period.</li>
+        <li>Backups are kept isolated until they expire. [Exact backup retention: pending legal review.]</li>
+        <li>Lessons and results stored on your iPhone are removed when you delete a lesson, sign out or delete your account.</li>
+        <li><strong>Free-lesson marker.</strong> Account deletion previously kept a one-way marker: an HMAC-SHA256 keyed hash of your Apple account identifier, made with a secret server key. It held no Apple ID, name or email, and it was no longer linked to your account. It also kept the request keys tried and the delivery time. Its only purpose was to stop the free first lesson from being claimed twice. We removed it on 2026-10-20 when the free lesson was retired, and we no longer keep it. [Draft, pending legal review.]</li>
+      </ul>
+
+      <h2>Your choices</h2>
+      <p>You can delete a lesson in the app, or delete your account from Account. Deleting your account does not cancel an Apple subscription. Cancel it in your Apple subscription settings.</p>
+
+      <h2>Children</h2>
+      <p>[Age requirements and children's data: pending legal review.]</p>
+
+      <h2>International transfers</h2>
+      <p>[Transfer locations and safeguards: pending legal review.]</p>
+
+      <h2>Contact</h2>
+      <p>Questions, access, correction or deletion requests: <a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+
+      <h2>Changes to this policy</h2>
+      <p>[Notice of changes: pending legal review.]</p>
+    </div>
+  </section>
+</Base>

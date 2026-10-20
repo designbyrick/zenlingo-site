@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import { contactEmail } from '../../site.config.mjs';
+---
+<Base
+  title="Terms of Use | Zenlingo"
+  description="The terms for using Zenlingo lessons, trials and subscriptions. Draft, pending legal review."
+  path="/terms/"
+>
+  <section class="page-title">
+    <div class="wrap prose">
+      <h1>Terms of Use</h1>
+      <p class="pending">Draft, pending legal review. This page is not final and must not be published as the final terms until reviewed.</p>
+
+      <h2>Using Zenlingo</h2>
+      <p>Zenlingo creates short English lessons from photos you choose. You must sign in with Apple to use full lessons.</p>
+
+      <h2>AI-generated content</h2>
+      <p>AI can make mistakes, including incorrect information or answers. Lessons are for learning and are not guaranteed to be accurate. [Limitation of responsibility: pending legal review.]</p>
+
+      <h2>Your photos</h2>
+      <p>Only upload photos you have the right to use. Do not upload photos that break the law or that you do not have permission to share. Your photos are processed as described in the Privacy Policy.</p>
+
+      <h2>Trials and subscriptions</h2>
+      <ul>
+        <li>Both plans, Monthly and Annual, include a 3-day free trial when you are eligible. Apple confirms eligibility.</li>
+        <li>Prices and billing periods are shown in the app before you buy. Subscriptions renew automatically unless you cancel in your Apple subscription settings.</li>
+        <li>Cancelling does not end access before the current period finishes.</li>
+        <li>Full lessons need an active trial or subscription. After access ends, the app is locked until you renew.</li>
+        <li>Personal-photo lessons are subject to a usage limit of up to 10 lessons in any 24-hour window. [Limit changes: pending legal review.]</li>
+        <li>[Refund terms: pending legal review. Apple handles refund requests under its own policies.]</li>
+      </ul>
+
+      <h2>Account deletion</h2>
+      <p>You can delete your account in the app. Deletion is permanent. Cancel any Apple subscription separately.</p>
+
+      <h2>Termination</h2>
+      <p>[Termination rules: pending legal review.]</p>
+
+      <h2>Governing law</h2>
+      <p>[Governing law and dispute resolution: pending legal review.]</p>
+
+      <h2>Contact</h2>
+      <p><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+    </div>
+  </section>
+</Base>
