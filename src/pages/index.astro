@@ -1,10 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
+import Phone from '../components/Phone.astro';
 import { siteUrl, siteName, appStoreUrl } from '../../site.config.mjs';
 
-const title = 'Learn English from the places around you | Zenlingo';
+const title = 'Learn the English of the places you go | Zenlingo';
 const description =
-  'Take a photo of a café, supermarket or office. Zenlingo turns the scene into a short English lesson: three useful words, two expressions and ten practice questions.';
+  'Snap a café, a pharmacy or an office. Zenlingo turns the scene into a short English lesson: three useful words, two everyday expressions and ten practice questions.';
 
 const faq = [
   {
@@ -15,7 +16,7 @@ const faq = [
   {
     question: 'Do I need an account?',
     answer:
-      'Yes. Full lessons require Sign in with Apple. Signing in with the same Apple account lets you recover your synchronized lessons after you reinstall the app or change iPhone.',
+      'Yes. Full lessons use Sign in with Apple. Sign in with the same Apple account to get your synchronized lessons back after you reinstall the app or change iPhone.',
   },
   {
     question: 'What happens to my photos?',
@@ -23,14 +24,14 @@ const faq = [
       'Your photo is sent to OpenAI to create the lesson. Zenlingo stores a reduced copy of the photo with your collection, and does not keep original-resolution photos. Your originals stay in your photo library. See the Privacy Policy for details.',
   },
   {
-    question: 'Does Zenlingo record or score my voice?',
+    question: 'Will Zenlingo record my voice?',
     answer:
-      'No. Zenlingo does not record your voice, use speech recognition or score your pronunciation. Audio only plays the English word or expression.',
+      'No. Zenlingo never records your voice, uses speech recognition or scores your pronunciation. Audio only plays the English word or expression so you can listen.',
   },
   {
-    question: 'Are the lessons always correct?',
+    question: 'Can the lessons contain mistakes?',
     answer:
-      'No. AI can make mistakes, including incorrect information or answers. Check anything important with a teacher or a dictionary.',
+      'Yes. AI can make mistakes, including incorrect information or answers. Check anything important with a teacher or a dictionary.',
   },
   {
     question: 'How do I cancel my subscription?',
@@ -64,69 +65,173 @@ const jsonLd = [
 ---
 <Base title={title} description={description} path="/" jsonLd={jsonLd}>
   <section class="hero">
-    <div class="wrap">
-      <p class="label">Learn English from your photos</p>
-      <h1>Learn English from the places around you</h1>
-      <p class="lead">
-        Take a photo of a café, a supermarket or an office. Zenlingo turns the scene into a short
-        lesson: three useful words, two everyday expressions and ten practice questions.
-      </p>
-      <div class="actions">
-        {
-          appStoreUrl ? (
-            <a class="button button-primary" href={appStoreUrl}>Download on the App Store</a>
-          ) : (
-            <span class="button" aria-disabled="true">Coming soon to the App Store</span>
-          )
-        }
-        <a class="button button-secondary" href="#how-it-works">See how it works</a>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="label">English lessons from your photos</p>
+        <h1>Learn the English of the places you go</h1>
+        <p class="lead">
+          Snap a café, a pharmacy or an office. Zenlingo gives you the words and expressions you would
+          use right there: three words, two expressions and ten practice questions.
+        </p>
+        <div class="actions">
+          {
+            appStoreUrl ? (
+              <a class="button button-primary" href={appStoreUrl}>Download on the App Store</a>
+            ) : (
+              <span class="button" aria-disabled="true">Coming soon to the App Store</span>
+            )
+          }
+          <a class="button button-secondary" href="#how-it-works">See how it works</a>
+        </div>
+        <p class="caption">
+          Sign in with Apple. 3-day free trial on both plans when you are eligible. The app is in English.
+        </p>
+      </div>
+      <div class="photo-stack" aria-hidden="false">
+        <span class="stack-card stack-purple" aria-hidden="true"></span>
+        <span class="stack-card stack-white" aria-hidden="true"></span>
+        <img
+          class="stack-photo"
+          src="/img/restaurant.jpg"
+          width="1000"
+          height="667"
+          alt="A busy café interior with a counter, tables and customers"
+          fetchpriority="high"
+        />
       </div>
     </div>
   </section>
 
   <section class="section" id="how-it-works">
     <div class="wrap">
-      <h2>How it works</h2>
+      <h2>From photo to practice</h2>
       <div class="grid grid-3">
-        <article class="card">
+        <article class="card step-card">
+          <img class="step-photo" src="/img/bakery.jpg" width="1000" height="667" loading="lazy" alt="A bakery counter with bread and pastries" />
           <span class="step-number" aria-hidden="true">1</span>
-          <h3>Choose a photo</h3>
+          <h3>Snap or pick a photo</h3>
           <p>
-            Take a photo or choose one from your library. The iOS photo picker only shares the
+            Take a photo or choose one from your library. The iOS photo picker shares only the
             photos you select.
           </p>
         </article>
-        <article class="card">
+        <article class="card step-card">
+          <img class="step-photo" src="/img/airport.jpg" width="1000" height="667" loading="lazy" alt="An airport terminal with check-in desks and travellers" />
           <span class="step-number" aria-hidden="true">2</span>
-          <h3>Learn</h3>
+          <h3>Learn what you would say there</h3>
           <p>
-            Study three useful words and two expressions. Each one has a simple English meaning,
-            an example and audio you can play.
+            Get three words and two expressions from the scene. Each has a plain-English meaning,
+            an example and audio so you can hear how it sounds.
           </p>
         </article>
-        <article class="card">
+        <article class="card step-card">
+          <img class="step-photo" src="/img/train-station.jpg" width="1000" height="667" loading="lazy" alt="A train station platform with a waiting train" />
           <span class="step-number" aria-hidden="true">3</span>
-          <h3>Practice</h3>
+          <h3>Practice, then review</h3>
           <p>
-            Answer ten multiple-choice questions with four options each. See your result and
-            review the answers you missed.
+            Answer ten multiple-choice questions with four options each. See your result, then go
+            back over the answers you missed.
           </p>
         </article>
       </div>
       <p class="muted" style="margin-top: 24px;">
-        Your lessons are saved to your collection. Sign in with Apple to keep them available on
-        your account.
+        Every lesson is saved to your collection. Sign in with Apple to keep your collection on your
+        account, even if you change iPhone.
       </p>
+    </div>
+  </section>
+
+  <section class="section" id="in-the-app">
+    <div class="wrap">
+      <p class="label">In the app</p>
+      <h2>One scene, one short lesson</h2>
+      <p>
+        Learn the words, answer the questions, and find every lesson again in your collection.
+        Screens are illustrative.
+      </p>
+      <div class="phones">
+        <Phone label="Learn a word from your photo">
+          <div class="ui">
+            <div class="ui-top"><span class="ui-close"></span><span class="ui-progress"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+            <div class="ui-stack">
+              <span class="ui-card ui-card-purple"></span>
+              <span class="ui-card ui-card-white"></span>
+              <img src="/img/restaurant.jpg" alt="" width="1000" height="667" />
+            </div>
+            <span class="ui-tag">Word</span>
+            <p class="ui-word">counter service</p>
+            <p class="ui-def">A way of ordering where you pay and collect your food at a counter.</p>
+            <p class="ui-example">“Is this counter service?”</p>
+            <span class="ui-speaker"></span>
+            <span class="ui-button">Next word</span>
+          </div>
+        </Phone>
+        <Phone label="Practice with four options">
+          <div class="ui">
+            <div class="ui-top"><span class="ui-close"></span><span class="ui-progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+            <span class="ui-tag">Complete the sentence</span>
+            <p class="ui-question">Please order at the ______.</p>
+            <ul class="ui-options">
+              <li><b>A</b>bridge</li>
+              <li class="correct"><b>B</b>counter<em>✓</em></li>
+              <li><b>C</b>mirror</li>
+              <li><b>D</b>pillow</li>
+            </ul>
+            <p class="ui-feedback"><strong>Correct.</strong></p>
+            <span class="ui-button">Next</span>
+          </div>
+        </Phone>
+        <Phone label="Your collection of lessons">
+          <div class="ui">
+            <p class="ui-title">Collection</p>
+            <ul class="ui-list">
+              <li><img src="/img/restaurant.jpg" alt="" width="1000" height="667" /><span><strong>Café</strong><small>Words and expressions</small></span></li>
+              <li><img src="/img/airport.jpg" alt="" width="1000" height="667" /><span><strong>Airport</strong><small>Words and expressions</small></span></li>
+              <li><img src="/img/farmers-market.jpg" alt="" width="1000" height="667" /><span><strong>Market</strong><small>Words and expressions</small></span></li>
+              <li><img src="/img/pharmacy.jpg" alt="" width="1000" height="667" /><span><strong>Pharmacy</strong><small>Words and expressions</small></span></li>
+            </ul>
+          </div>
+        </Phone>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="label">Everyday places</p>
+      <h2>Words stick when they belong somewhere</h2>
+      <p>
+        Words are easier to use when you have seen where they belong. Zenlingo ties each lesson to a
+        real scene, so you learn language for a place instead of a list to memorize.
+      </p>
+      <ul class="places">
+        <li class="place place-wide">
+          <img src="/img/farmers-market.jpg" width="1000" height="667" loading="lazy" alt="Stalls of fresh produce at a farmers market" />
+          <span>Market</span>
+        </li>
+        <li class="place">
+          <img src="/img/pharmacy.jpg" width="1000" height="667" loading="lazy" alt="Shelves and a counter inside a pharmacy" />
+          <span>Pharmacy</span>
+        </li>
+        <li class="place">
+          <img src="/img/hotel.jpg" width="1000" height="667" loading="lazy" alt="A hotel lobby with a reception desk" />
+          <span>Hotel</span>
+        </li>
+        <li class="place place-wide">
+          <img src="/img/park.jpg" width="1000" height="667" loading="lazy" alt="A city park with paths, trees and benches" />
+          <span>Park</span>
+        </li>
+      </ul>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <p class="label">Choose your level</p>
-      <h2>Pick the level that sounds like you</h2>
+      <h2>Choose the level that feels like you</h2>
       <p>
-        Beginner, Intermediate and Advanced are self-selected labels. They are not a placement
-        test. Advanced lessons use more precise vocabulary in context.
+        Beginner, Intermediate and Advanced are labels you choose. They are not a placement test,
+        and you can change yours any time in Account. Advanced lessons use more precise vocabulary.
       </p>
       <div class="grid grid-3" style="margin-top: 24px;">
         <article class="card">
@@ -148,16 +253,15 @@ const jsonLd = [
   <section class="section" id="plans">
     <div class="wrap">
       <p class="label">Trial and plans</p>
-      <h2>Try it, then choose a plan</h2>
+      <h2>Try it first, then choose a plan</h2>
       <p>
-        Full lessons require an active trial or subscription. Both plans offer the same features
+        Full lessons need an active trial or subscription. Both plans include the same features
         and usage limits.
       </p>
 
       <p style="margin-top: 16px;">
-        There is no free tier. The only free part is the optional onboarding sample: one bundled
-        photo, one word and one question, shown before you subscribe. It needs no account, camera
-        access or subscription.
+        There is no free tier. You can try the optional sample first: one bundled photo, one word
+        and one question. It needs no account, camera access or subscription.
       </p>
 
       <div class="grid grid-2" style="margin-top: 24px;">
@@ -188,7 +292,7 @@ const jsonLd = [
   <section class="section faq" id="faq">
     <div class="wrap">
       <p class="label">Questions</p>
-      <h2>Frequently asked questions</h2>
+      <h2>Good to know</h2>
       {
         faq.map((item) => (
           <details>
