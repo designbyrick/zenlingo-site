@@ -18,12 +18,13 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
       <h2>What we collect</h2>
       <ul>
         <li><strong>Account.</strong> The identifier and details that Sign in with Apple provides, managed through our authentication service (Supabase Auth).</li>
-        <li><strong>Photos.</strong> The photo you choose is sent to OpenAI to create a lesson. We store a reduced copy of the photo in Supabase with your collection. We do not keep original-resolution photos. Your originals stay in your photo library.</li>
+        <li><strong>Photos.</strong> After you explicitly allow photo processing in the app, the photo you choose is sent to OpenAI to create a lesson. We store a reduced copy of the photo in Supabase with your collection. We do not keep original-resolution photos. Your originals stay in your photo library.</li>
         <li><strong>Lessons and practice.</strong> The lessons, expressions, questions and answers that the app saves. Your latest completed full-lesson result is stored only on your iPhone.</li>
         <li><strong>Settings.</strong> Your chosen English level.</li>
         <li><strong>Purchases.</strong> Subscription status, handled through Apple and RevenueCat. We do not receive your payment card details.</li>
-        <li><strong>Audio.</strong> Pronunciation audio for each word and expression. [Audio provider: pending owner decision.]</li>
-        <li><strong>Analytics and advertising.</strong> None are set up in this draft. [Pending owner confirmation.]</li>
+        <li><strong>Audio.</strong> Pronunciation audio is produced on your iPhone by the built-in iOS speech voice. The words are not sent to any third party for audio.</li>
+        <li><strong>Product analytics.</strong> The app sends a small set of anonymous usage events (for example that a photo was chosen, a lesson was completed or a subscription screen was viewed) to PostHog, hosted in the EU. Events use a random ID created on your iPhone that is not linked to your account, Apple ID, email or purchases, and is replaced when you sign out or delete your account. They never contain your photos, lesson content, answers or location, and we do not use advertising identifiers or tracking.</li>
+        <li><strong>Advertising.</strong> The app does not include advertising tools.</li>
       </ul>
       <p>Zenlingo does not record your voice, use speech recognition or score pronunciation.</p>
 
@@ -36,7 +37,6 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
         <li>OpenAI (photo processing to create lessons)</li>
         <li>Supabase (authentication, storage of your collection and reduced photos)</li>
         <li>RevenueCat (purchase status)</li>
-        <li>[Audio provider: pending owner decision]</li>
       </ul>
 
       <h2>How long we keep data</h2>
@@ -50,7 +50,7 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
       </ul>
 
       <h2>Your choices</h2>
-      <p>You can delete a lesson in the app, or delete your account from Account. Deleting your account does not cancel an Apple subscription. Cancel it in your Apple subscription settings.</p>
+      <p>You can stop allowing photo processing in Account at any time; this does not delete lessons already saved. You can delete a lesson in the app, or delete your account from Account. Deleting your account does not cancel an Apple subscription. Cancel it in your Apple subscription settings.</p>
 
       <h2>Children</h2>
       <p>[Age requirements and children's data: pending legal review.]</p>
