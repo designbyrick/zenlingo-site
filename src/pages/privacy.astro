@@ -44,7 +44,7 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
         <li>While your account is active, your collection stays in the cloud.</li>
         <li>After your access ends, we keep your cloud collection for 90 days. Renewing within that time restores access to it. After 90 days we delete it.</li>
         <li>If you delete your account, we block it immediately and delete your account and learning data from active systems within seven days. There is no recovery period.</li>
-        <li>Backups are kept isolated until they expire. [Exact backup retention: pending legal review.]</li>
+        <li>Backups are kept isolated until they expire. Backups are encrypted and expire on a rolling basis, within 7 days. Deleted data is not restored into active systems.</li>
         <li>Lessons and results stored on your iPhone are removed when you delete a lesson, sign out or delete your account.</li>
         <li><strong>Free-lesson marker.</strong> Account deletion previously kept a one-way marker: an HMAC-SHA256 keyed hash of your Apple account identifier, made with a secret server key. It held no Apple ID, name or email, and it was no longer linked to your account. It also kept the request keys tried and the delivery time. Its only purpose was to stop the free first lesson from being claimed twice. We removed it on 2026-10-20 when the free lesson was retired, and we no longer keep it. [Draft, pending legal review.]</li>
       </ul>
@@ -53,16 +53,16 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
       <p>You can stop allowing photo processing in Account at any time; this does not delete lessons already saved. You can delete a lesson in the app, or delete your account from Account. Deleting your account does not cancel an Apple subscription. Cancel it in your Apple subscription settings.</p>
 
       <h2>Children</h2>
-      <p>[Age requirements and children's data: pending legal review.]</p>
+      <p>Zenlingo is for people aged 13 and over, and you need an Apple Account to sign in. It is not directed to children under 13, and we do not knowingly collect their data. If you are under the age of majority where you live, use Zenlingo only with a parent or guardian's permission. If you believe a child has given us data, write to us and we will delete it.</p>
 
       <h2>International transfers</h2>
-      <p>[Transfer locations and safeguards: pending legal review.]</p>
+      <p>Our service providers (Apple, OpenAI, Supabase, RevenueCat and PostHog) may process data in countries other than yours. Your collection and account data are hosted by Supabase in Canada, photo processing by OpenAI and purchase status by RevenueCat may take place in the United States, and PostHog analytics are hosted in the EU. When your data leaves your country we rely on the safeguards the law allows, such as standard contractual clauses or the adequacy decisions that apply to those providers. Contact us for a copy of the safeguards that apply to you.</p>
 
       <h2>Contact</h2>
-      <p>Questions, access, correction or deletion requests: <a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+      <p>Controller: Ricardo Gusman Brandão, an individual developer based in Brazil. Questions, access, correction, portability, objection or deletion requests: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. You may also have the right to complain to your data protection authority, such as the ANPD in Brazil. We reply within 15 days.</p>
 
       <h2>Changes to this policy</h2>
-      <p>[Notice of changes: pending legal review.]</p>
+      <p>If we change this policy in a material way, we will tell you in the app or by email before the change takes effect, and we will update the date on this page. Where the law requires your consent for a new use, we will ask for it.</p>
     </div>
   </section>
 </Base>
