@@ -11,7 +11,7 @@
   --radius-control: 12px;
   --radius-card: 16px;
   --gutter: 16px;
-  --max-width: 960px;
+  --max-width: 1280px;
   color-scheme: light;
 }
 
@@ -851,4 +851,85 @@ a {
 
 .ui-stack img {
   height: auto;
+}
+
+/* Step visuals: the top of a phone showing the actual screen for that step */
+.step-visual {
+  height: 320px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 24px;
+  background: var(--divider, #ECE6DB);
+  margin-bottom: 20px;
+}
+
+.step-visual .phone-figure {
+  flex: none;
+}
+
+/* Camera screen */
+.ui-camera .ui-title {
+  margin-top: 4px;
+}
+
+.ui-viewfinder {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.ui-viewfinder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ui-viewfinder .c {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 0 solid var(--purple);
+}
+
+.ui-viewfinder .tl { left: 14px; top: 14px; border-width: 3px 0 0 3px; border-top-left-radius: 8px; }
+.ui-viewfinder .tr { right: 14px; top: 14px; border-width: 3px 3px 0 0; border-top-right-radius: 8px; }
+.ui-viewfinder .bl { left: 14px; bottom: 14px; border-width: 0 0 3px 3px; border-bottom-left-radius: 8px; }
+.ui-viewfinder .br { right: 14px; bottom: 14px; border-width: 0 3px 3px 0; border-bottom-right-radius: 8px; }
+
+.ui-shutter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 18px 0;
+}
+
+.ui-shutter {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 3px solid var(--ink);
+  background: var(--purple);
+  box-shadow: inset 0 0 0 3px var(--beige);
+}
+
+.ui-lib,
+.ui-lib-spacer {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--white);
+  border: 2px solid var(--ink);
+}
+
+.ui-lib-spacer {
+  visibility: hidden;
+}
+
+h1,
+h2 {
+  text-wrap: balance;
 }

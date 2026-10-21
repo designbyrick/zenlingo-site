@@ -1,6 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import Phone from '../components/Phone.astro';
+import ScreenLearn from '../components/ScreenLearn.astro';
+import ScreenPractice from '../components/ScreenPractice.astro';
+import ScreenCollection from '../components/ScreenCollection.astro';
+import ScreenCamera from '../components/ScreenCamera.astro';
 import { siteUrl, siteName, appStoreUrl } from '../../site.config.mjs';
 
 const title = 'Learn the English of the places you go | Zenlingo';
@@ -107,7 +111,7 @@ const jsonLd = [
       <h2>From photo to practice</h2>
       <div class="grid grid-3">
         <article class="card step-card">
-          <img class="step-photo" src="/img/bakery.jpg" width="1000" height="667" loading="lazy" alt="A bakery counter with bread and pastries" />
+          <div class="step-visual"><Phone label="Take a photo or choose one" caption={false}><ScreenCamera /></Phone></div>
           <span class="step-number" aria-hidden="true">1</span>
           <h3>Snap or pick a photo</h3>
           <p>
@@ -116,7 +120,7 @@ const jsonLd = [
           </p>
         </article>
         <article class="card step-card">
-          <img class="step-photo" src="/img/airport.jpg" width="1000" height="667" loading="lazy" alt="An airport terminal with check-in desks and travellers" />
+          <div class="step-visual"><Phone label="Learn words and expressions" caption={false}><ScreenLearn /></Phone></div>
           <span class="step-number" aria-hidden="true">2</span>
           <h3>Learn what you would say there</h3>
           <p>
@@ -125,7 +129,7 @@ const jsonLd = [
           </p>
         </article>
         <article class="card step-card">
-          <img class="step-photo" src="/img/train-station.jpg" width="1000" height="667" loading="lazy" alt="A train station platform with a waiting train" />
+          <div class="step-visual"><Phone label="Answer practice questions" caption={false}><ScreenPractice /></Phone></div>
           <span class="step-number" aria-hidden="true">3</span>
           <h3>Practice, then review</h3>
           <p>
@@ -151,46 +155,13 @@ const jsonLd = [
       </p>
       <div class="phones">
         <Phone label="Learn a word from your photo">
-          <div class="ui">
-            <div class="ui-top"><span class="ui-close"></span><span class="ui-progress"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
-            <div class="ui-stack">
-              <span class="ui-card ui-card-purple"></span>
-              <span class="ui-card ui-card-white"></span>
-              <img src="/img/restaurant.jpg" alt="" width="1000" height="667" />
-            </div>
-            <span class="ui-tag">Word</span>
-            <p class="ui-word">counter service</p>
-            <p class="ui-def">A way of ordering where you pay and collect your food at a counter.</p>
-            <p class="ui-example">“Is this counter service?”</p>
-            <span class="ui-speaker"></span>
-            <span class="ui-button">Next word</span>
-          </div>
+          <ScreenLearn />
         </Phone>
         <Phone label="Practice with four options">
-          <div class="ui">
-            <div class="ui-top"><span class="ui-close"></span><span class="ui-progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
-            <span class="ui-tag">Complete the sentence</span>
-            <p class="ui-question">Please order at the ______.</p>
-            <ul class="ui-options">
-              <li><b>A</b>bridge</li>
-              <li class="correct"><b>B</b>counter<em>✓</em></li>
-              <li><b>C</b>mirror</li>
-              <li><b>D</b>pillow</li>
-            </ul>
-            <p class="ui-feedback"><strong>Correct.</strong></p>
-            <span class="ui-button">Next</span>
-          </div>
+          <ScreenPractice />
         </Phone>
         <Phone label="Your collection of lessons">
-          <div class="ui">
-            <p class="ui-title">Collection</p>
-            <ul class="ui-list">
-              <li><img src="/img/restaurant.jpg" alt="" width="1000" height="667" /><span><strong>Café</strong><small>Words and expressions</small></span></li>
-              <li><img src="/img/airport.jpg" alt="" width="1000" height="667" /><span><strong>Airport</strong><small>Words and expressions</small></span></li>
-              <li><img src="/img/farmers-market.jpg" alt="" width="1000" height="667" /><span><strong>Market</strong><small>Words and expressions</small></span></li>
-              <li><img src="/img/pharmacy.jpg" alt="" width="1000" height="667" /><span><strong>Pharmacy</strong><small>Words and expressions</small></span></li>
-            </ul>
-          </div>
+          <ScreenCollection />
         </Phone>
       </div>
     </div>
