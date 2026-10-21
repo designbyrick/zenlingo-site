@@ -44,7 +44,7 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
         <li>While your account is active, your collection stays in the cloud.</li>
         <li>After your access ends, we keep your cloud collection for 90 days. Renewing within that time restores access to it. After 90 days we delete it.</li>
         <li>If you delete your account, we block it immediately and delete your account and learning data from active systems within seven days. There is no recovery period.</li>
-        <li>Backups are kept isolated until they expire. Backups are encrypted and expire on a rolling basis, within 7 days. Deleted data is not restored into active systems.</li>
+        <li>We do not keep routine backups of your cloud collection. Because of that, a deleted lesson or account cannot be restored, and in rare cases a technical failure could cause lost lessons.</li>
         <li>Lessons and results stored on your iPhone are removed when you delete a lesson, sign out or delete your account.</li>
         <li><strong>Free-lesson marker.</strong> Account deletion previously kept a one-way marker: an HMAC-SHA256 keyed hash of your Apple account identifier, made with a secret server key. It held no Apple ID, name or email, and it was no longer linked to your account. It also kept the request keys tried and the delivery time. Its only purpose was to stop the free first lesson from being claimed twice. We removed it on 2026-10-20 when the free lesson was retired, and we no longer keep it. [Draft, pending legal review.]</li>
       </ul>
