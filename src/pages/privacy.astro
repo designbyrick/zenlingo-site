@@ -4,13 +4,12 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
 ---
 <Base
   title="Privacy Policy | Zenlingo"
-  description="How Zenlingo handles your account, photos, lessons and purchases. Draft, pending legal review."
+  description="How Zenlingo handles your account, photos, lessons and purchases."
   path="/privacy/"
 >
   <section class="page-title">
     <div class="wrap prose">
       <h1>Privacy Policy</h1>
-      <p class="pending">Draft, pending legal review. This page is not final and must not be published as the final policy until reviewed.</p>
 
       <h2>Who we are</h2>
       <p>Zenlingo is operated by {placeholders.legalEntity}</p>
@@ -20,6 +19,7 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
         <li><strong>Account.</strong> The identifier and details that Sign in with Apple provides, managed through our authentication service (Supabase Auth).</li>
         <li><strong>Photos.</strong> After you explicitly allow photo processing in the app, the photo you choose is sent to OpenAI to create a lesson. We store a reduced copy of the photo in Supabase with your collection. We do not keep original-resolution photos. Your originals stay in your photo library.</li>
         <li><strong>Lessons and practice.</strong> The lessons, expressions, questions and answers that the app saves. Your latest completed full-lesson result is stored only on your iPhone.</li>
+        <li><strong>Problem reports.</strong> If you tap “Report a problem” on an exercise, the message you write, the category you choose, the exercise number, whether the lesson is from the catalog or your own photo, its release or saved-lesson id, your level, app version and platform, linked to your account. It never includes your photo or the lesson text. Please do not put personal information in the message.</li>
         <li><strong>Settings.</strong> Your chosen English level.</li>
         <li><strong>Purchases.</strong> Subscription status, handled through Apple and RevenueCat. We do not receive your payment card details.</li>
         <li><strong>Audio.</strong> Pronunciation audio is produced on your iPhone by the built-in iOS speech voice. The words are not sent to any third party for audio.</li>
@@ -42,11 +42,13 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
       <h2>How long we keep data</h2>
       <ul>
         <li>While your account is active, your collection stays in the cloud.</li>
-        <li>After your access ends, we keep your cloud collection for 90 days. Renewing within that time restores access to it. After 90 days we delete it.</li>
+        <li>After your access ends, the app is locked, but we do not delete your cloud collection automatically. It stays until you delete lessons or delete your account, and renewing restores access to it.</li>
+        <li>We keep cost and billing records (amounts and request counts, never photos or lesson content) for accounting and abuse prevention. They are not tied to your lessons.</li>
         <li>If you delete your account, we block it immediately and delete your account and learning data from active systems within seven days. There is no recovery period.</li>
         <li>We do not keep routine backups of your cloud collection. Because of that, a deleted lesson or account cannot be restored, and in rare cases a technical failure could cause lost lessons.</li>
+        <li>Problem reports are used only to correct lessons and review abuse. You can send up to 20 per day. We delete them after 180 days, or when you delete your account.</li>
         <li>Lessons and results stored on your iPhone are removed when you delete a lesson, sign out or delete your account.</li>
-        <li><strong>Free-lesson marker.</strong> Account deletion previously kept a one-way marker: an HMAC-SHA256 keyed hash of your Apple account identifier, made with a secret server key. It held no Apple ID, name or email, and it was no longer linked to your account. It also kept the request keys tried and the delivery time. Its only purpose was to stop the free first lesson from being claimed twice. We removed it on 2026-10-20 when the free lesson was retired, and we no longer keep it. [Draft, pending legal review.]</li>
+        <li><strong>Free-lesson marker.</strong> Account deletion previously kept a one-way marker: an HMAC-SHA256 keyed hash of your Apple account identifier, made with a secret server key. It held no Apple ID, name or email, and it was no longer linked to your account. It also kept the request keys tried and the delivery time. Its only purpose was to stop the free first lesson from being claimed twice. We removed it on 2026-10-20 when the free lesson was retired, and we no longer keep it.</li>
       </ul>
 
       <h2>Your choices</h2>
