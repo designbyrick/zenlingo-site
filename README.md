@@ -25,7 +25,6 @@ Change `siteUrl` in `site.config.mjs` and `public/CNAME`; canonical URLs, the si
 
 ## Pending placeholders
 
-- Required postal contact address for the operator (Privacy Policy and Terms).
 - Legal text in the Privacy Policy and Terms of Use, marked "draft, pending legal review".
 - Audio provider and analytics status in the Privacy Policy.
 - App Store link (`appStoreUrl` in `site.config.mjs`); the Home page shows "Coming soon" until it is set.
@@ -36,10 +35,6 @@ Design I tokens from `docs/DESIGN_SYSTEM.md` are defined at the top of `src/styl
 
 ## Deployment (GitHub Pages)
 
-`.github/workflows/site-pages.yml` builds `site/` and publishes it on every push to `main` that touches `site/`. `public/CNAME` sets the custom domain `zenlingoapp.com`.
+This repo is private and its plan does not support Pages. The site is published from the public repo `designbyrick/zenlingo-site` (a copy of `site/` plus `.github/workflows/pages.yml`). After changing `site/` here, copy the files to that repo and push to `main`; its workflow builds and deploys. `public/CNAME` sets the custom domain `zenlingoapp.com`.
 
-One-time setup (GitHub, not in code):
-
-1. Repo Settings → Pages → Source: GitHub Actions.
-2. Custom domain: `zenlingoapp.com`, then enable Enforce HTTPS once the certificate is issued.
-3. DNS at the registrar: four `A` records for the apex (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`) and a `CNAME` for `www` pointing to `designbyrick.github.io`.
+DNS (Namecheap): four `A` records for the apex (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`) and a `CNAME` for `www` pointing to `designbyrick.github.io`. Keep the existing Zoho MX/SPF records.

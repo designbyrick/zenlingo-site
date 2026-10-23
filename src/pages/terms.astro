@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { contactEmail } from '../../site.config.mjs';
+import { contactEmail, operator } from '../../site.config.mjs';
 ---
 <Base
   title="Terms of Use | Zenlingo"
@@ -40,10 +40,10 @@ import { contactEmail } from '../../site.config.mjs';
       <p>Zenlingo is licensed to you under the Apple Standard End User License Agreement (EULA) for licensed applications. These terms apply in addition to it.</p>
 
       <h2>Governing law</h2>
-      <p>These terms are governed by the laws of Brazil. If you are a consumer, you may also rely on the mandatory consumer-protection laws of the country where you live, and you may bring a claim in the courts of your place of residence. Otherwise, the courts of Brazil have jurisdiction. Apple's Standard License Agreement also applies to your use of the app. Where it conflicts with these terms on matters it covers, Apple's terms prevail. Please contact us first at the address below so we can try to resolve a problem informally.</p>
+      <p>These terms are governed by the laws of the Province of British Columbia and the federal laws of Canada that apply there. If you are a consumer, you may also rely on the mandatory consumer-protection laws of the country where you live, and you may bring a claim in the courts of your place of residence. Otherwise, the courts of British Columbia have jurisdiction. Apple's Standard License Agreement also applies to your use of the app. Where it conflicts with these terms on matters it covers, Apple's terms prevail. Please contact us first at the address below so we can try to resolve a problem informally.</p>
 
       <h2>Contact</h2>
-      <p>Operator: Ricardo Gusman Brandão, an individual developer based in Brazil.</p>
+      <p>Zenlingo is operated by {operator}.</p>
       <p><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
     </div>
   </section>

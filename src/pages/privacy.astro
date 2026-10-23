@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { contactEmail, placeholders } from '../../site.config.mjs';
+import { contactEmail, operator } from '../../site.config.mjs';
 ---
 <Base
   title="Privacy Policy | Zenlingo"
@@ -12,7 +12,7 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
       <h1>Privacy Policy</h1>
 
       <h2>Who we are</h2>
-      <p>Zenlingo is operated by {placeholders.legalEntity}</p>
+      <p>Zenlingo is operated by {operator}.</p>
 
       <h2>What we collect</h2>
       <ul>
@@ -37,6 +37,7 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
         <li>OpenAI (photo processing to create lessons)</li>
         <li>Supabase (authentication, storage of your collection and reduced photos)</li>
         <li>RevenueCat (purchase status)</li>
+        <li>PostHog (anonymous product analytics, hosted in the EU)</li>
       </ul>
 
       <h2>How long we keep data</h2>
@@ -61,7 +62,7 @@ import { contactEmail, placeholders } from '../../site.config.mjs';
       <p>Our service providers (Apple, OpenAI, Supabase, RevenueCat and PostHog) may process data in countries other than yours. Your collection and account data are hosted by Supabase in Canada, photo processing by OpenAI and purchase status by RevenueCat may take place in the United States, and PostHog analytics are hosted in the EU. When your data leaves your country we rely on the safeguards the law allows, such as standard contractual clauses or the adequacy decisions that apply to those providers. Contact us for a copy of the safeguards that apply to you.</p>
 
       <h2>Contact</h2>
-      <p>Controller: Ricardo Gusman Brandão, an individual developer based in Brazil. Questions, access, correction, portability, objection or deletion requests: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. You may also have the right to complain to your data protection authority, such as the ANPD in Brazil. We reply within 15 days.</p>
+      <p>Zenlingo is operated by {operator}, who is responsible for privacy. Questions, access, correction, portability, objection or deletion requests: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. We reply within 15 days. You may also complain to the Office of the Information and Privacy Commissioner for British Columbia, the Office of the Privacy Commissioner of Canada or the data protection authority where you live.</p>
 
       <h2>Changes to this policy</h2>
       <p>If we change this policy in a material way, we will tell you in the app or by email before the change takes effect, and we will update the date on this page. Where the law requires your consent for a new use, we will ask for it.</p>

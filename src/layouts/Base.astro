@@ -4,7 +4,7 @@ import '@fontsource/instrument-sans/400.css';
 import '@fontsource/instrument-sans/600.css';
 import '@fontsource/instrument-sans/700.css';
 import '../styles/global.css';
-import { siteUrl, siteName, placeholders } from '../../site.config.mjs';
+import { siteUrl, siteName } from '../../site.config.mjs';
 
 interface Props {
   title: string;
@@ -74,7 +74,7 @@ const year = new Date().getFullYear();
           <li><a href="/terms/">Terms of Use</a></li>
           <li><a href="/support/">Support</a></li>
         </ul>
-        <p>© {year} Zenlingo. {placeholders.legalEntity}</p>
+        <p>© {year} Zenlingo.</p>
       </div>
     </footer>
   </body>
