@@ -25,7 +25,6 @@ Change `siteUrl` in `site.config.mjs` and `public/CNAME`; canonical URLs, the si
 
 ## Pending placeholders
 
-- Legal text in the Privacy Policy and Terms of Use, marked "draft, pending legal review".
 - Audio provider and analytics status in the Privacy Policy.
 - App Store link (`appStoreUrl` in `site.config.mjs`); the Home page shows "Coming soon" until it is set.
 
